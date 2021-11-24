@@ -1,5 +1,9 @@
 package lk.ijse.hibernate.entity;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class CustomerOrder {
     private String name;
     private String orderId;

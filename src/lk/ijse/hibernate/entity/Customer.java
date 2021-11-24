@@ -2,7 +2,12 @@ package lk.ijse.hibernate.entity;
 
 import javafx.scene.control.Button;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Customer {
+    @Id
     private String customerId;
     private String title;
     private String name;

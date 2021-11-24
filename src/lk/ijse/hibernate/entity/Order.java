@@ -1,6 +1,8 @@
 package lk.ijse.hibernate.entity;
 
+import javax.persistence.Entity;
 
+@Entity
 public class Order {
     private String orderId;
     private String itemCode;
