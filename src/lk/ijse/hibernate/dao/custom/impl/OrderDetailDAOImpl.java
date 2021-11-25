@@ -1,7 +1,6 @@
 package lk.ijse.hibernate.dao.custom.impl;
 
 import lk.ijse.hibernate.dao.CrudUtil;
-import lk.ijse.hibernate.dao.custom.OrderDetailDAO;
 import lk.ijse.hibernate.dto.CustomerOrderDTO;
 import lk.ijse.hibernate.entity.CustomerOrder;
 import lk.ijse.hibernate.entity.OrderDetail;
@@ -11,13 +10,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderDetailDAOImpl implements OrderDetailDAO {
-    @Override
+public class OrderDetailDAOImpl{
+
     public List<CustomerOrderDTO> searchOrderDetail(String value) throws SQLException, ClassNotFoundException {
         throw new UnsupportedOperationException("Not Supported Yet");
     }
 
-    @Override
+
     public ArrayList<CustomerOrder> getAllCustomerDetailHistory() throws SQLException, ClassNotFoundException {
         ArrayList<CustomerOrder> allItems = new ArrayList();
         ResultSet rst = CrudUtil.executeQuery("SELECT c.name," +
@@ -41,23 +40,23 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
         return allItems;
     }
 
-    @Override
+
     public boolean add(OrderDetail dto) throws SQLException, ClassNotFoundException {
         return CrudUtil.executeUpdate("INSERT INTO OrderDetail (orderDetailId, orderDetailItemCode,orderDetailQty, price) VALUES (?,?,?,?)",
                 dto.getOrderDetailId(), dto.getOrderDetailItemCode(), dto.getOrderDetailQty(), dto.getPrice());
     }
 
-    @Override
+
     public boolean delete(String s) throws SQLException, ClassNotFoundException {
         throw new UnsupportedOperationException("Not Supported Yet");
     }
 
-    @Override
+
     public boolean update(OrderDetail orderDetail) throws SQLException, ClassNotFoundException {
         throw new UnsupportedOperationException("Not Supported Yet");
     }
 
-    @Override
+
     public OrderDetail search(String orderDetailId) throws SQLException, ClassNotFoundException {
         ResultSet rst = CrudUtil.executeQuery("SELECT * FROM OrderDetail WHERE orderDetailId=?", orderDetailId);
         rst.next();
@@ -66,7 +65,7 @@ public class OrderDetailDAOImpl implements OrderDetailDAO {
     }
 
 
-    @Override
+
     public ArrayList<OrderDetail> getAll() throws SQLException, ClassNotFoundException {
         throw new UnsupportedOperationException("Not Supported Yet");
     }

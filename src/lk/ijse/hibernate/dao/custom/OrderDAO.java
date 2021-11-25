@@ -1,11 +1,9 @@
 package lk.ijse.hibernate.dao.custom;
 
-import lk.ijse.hibernate.dao.CrudDAO;
-import lk.ijse.hibernate.entity.Order;
-
+import java.beans.AppletInitializer;
 import java.sql.SQLException;
 
-public interface OrderDAO extends CrudDAO<Order, String> {
+public interface OrderDAO extends AppletInitializer {
     boolean ifOrderExist(String oid) throws SQLException, ClassNotFoundException;
 
     String generateNewOrderId() throws SQLException, ClassNotFoundException;

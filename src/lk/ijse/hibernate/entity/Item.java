@@ -3,11 +3,8 @@ package lk.ijse.hibernate.entity;
 import javafx.scene.control.Button;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Transient;
 
 @Entity(name = "item")
 public class Item {
@@ -17,11 +14,11 @@ public class Item {
     private String packSize;
     private int qtyOnHand;
     private double unitPrice;
+    @Transient
     private Button update;
+    @Transient
     private Button delete;
 
-    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER)
-    private List<Order> orderList = new ArrayList<>();
 
     public Item() {
     }

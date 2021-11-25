@@ -1,21 +1,20 @@
 package lk.ijse.hibernate.dao.custom.impl;
 
 import lk.ijse.hibernate.dao.CrudUtil;
-import lk.ijse.hibernate.dao.custom.OrderDAO;
 import lk.ijse.hibernate.entity.Order;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class OrderDAOImpl implements OrderDAO {
-    @Override
+public class OrderDAOImpl {
+
     public boolean ifOrderExist(String orderId) throws SQLException, ClassNotFoundException {
         ResultSet rst = CrudUtil.executeQuery("SELECT orderId FROM `Order` WHERE orderId=?", orderId);
         return rst.next();
     }
 
-    @Override
+
     public String generateNewOrderId() throws SQLException, ClassNotFoundException {
         ResultSet rst = CrudUtil.executeQuery("SELECT orderId FROM `Order` ORDER BY orderId DESC LIMIT 1");
         if (rst.next()) {
@@ -36,28 +35,28 @@ public class OrderDAOImpl implements OrderDAO {
         }
     }
 
-    @Override
+
     public boolean updateQty(String itemCode, int qty) throws SQLException, ClassNotFoundException {
         return CrudUtil.executeUpdate("UPDATE ITEM SET qtyOnHand=(qtyOnHand-" + qty + ") WHERE itemCode='" + itemCode + "'");
     }
 
-    @Override
+
     public boolean add(Order dto) throws SQLException, ClassNotFoundException {
         return CrudUtil.executeUpdate("INSERT INTO `Order` (orderId,itemCode,customerId,cost,orderDate,orderTime) VALUES (?,?,?,?,?,?)",
                 dto.getOrderId(), dto.getItem(), dto.getCustomer(), dto.getCost(), dto.getDate(), dto.getTime());
     }
 
-    @Override
+
     public boolean delete(String s) throws SQLException, ClassNotFoundException {
         throw new UnsupportedOperationException("Not Supported Yet");
     }
 
-    @Override
+
     public boolean update(Order order) throws SQLException, ClassNotFoundException {
         throw new UnsupportedOperationException("Not Supported Yet");
     }
 
-    @Override
+
     public Order search(String orderId) throws SQLException, ClassNotFoundException {
 //        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `Order` WHERE orderId=?", orderId);
 //        rst.next();
@@ -65,7 +64,7 @@ public class OrderDAOImpl implements OrderDAO {
         return null;
     }
 
-    @Override
+
     public ArrayList<Order> getAll() throws SQLException, ClassNotFoundException {
         throw new UnsupportedOperationException("Not Supported Yet");
     }
