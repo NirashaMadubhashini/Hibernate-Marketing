@@ -1,8 +1,8 @@
 package lk.ijse.hibernate.dao.custom.impl;
 
-import dao.CrudUtil;
-import dao.custom.QueryDAO;
-import dto.CustomerOrderDTO;
+import lk.ijse.hibernate.dao.CrudUtil;
+import lk.ijse.hibernate.dao.custom.QueryDAO;
+import lk.ijse.hibernate.dto.CustomerOrderDTO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

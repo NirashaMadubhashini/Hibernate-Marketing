@@ -2,8 +2,7 @@ package lk.ijse.hibernate.entity;
 
 import javax.persistence.Entity;
 
-
-@Entity
+@Entity(name = "customerOrder")
 public class CustomerOrder {
     private String name;
     private String orderId;

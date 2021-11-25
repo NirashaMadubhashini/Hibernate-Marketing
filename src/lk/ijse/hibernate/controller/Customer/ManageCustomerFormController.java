@@ -1,8 +1,6 @@
 package lk.ijse.hibernate.controller.Customer;
 
 import bo.BoFactory;
-import bo.custom.impl.CustomerBOImpl;
-import dto.CustomerDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -11,7 +9,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import view.tm.CustomerTM;
+import lk.ijse.hibernate.bo.custom.impl.CustomerBOImpl;
+import lk.ijse.hibernate.dto.CustomerDTO;
+import lk.ijse.hibernate.view.tm.CustomerTM;
 
 import java.io.IOException;
 import java.sql.SQLException;

@@ -1,9 +1,11 @@
 package lk.ijse.hibernate.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
-@Entity
+@Entity(name = "orderDetail")
 public class OrderDetail {
+    @Id
     private String orderDetailId;
     private String orderDetailItemCode;
     private int orderDetailQty;

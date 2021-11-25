@@ -1,14 +1,14 @@
 package lk.ijse.hibernate.controller.Customer;
 
 import bo.BoFactory;
-import bo.custom.CustomerBO;
-import dto.CustomerDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.hibernate.bo.custom.CustomerBO;
+import lk.ijse.hibernate.dto.CustomerDTO;
 
 import java.io.IOException;
 import java.sql.SQLException;

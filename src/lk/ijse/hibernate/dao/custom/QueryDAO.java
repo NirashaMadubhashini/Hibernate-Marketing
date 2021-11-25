@@ -1,7 +1,7 @@
 package lk.ijse.hibernate.dao.custom;
 
-import dao.SuperDAO;
-import dto.CustomerOrderDTO;
+import lk.ijse.hibernate.dao.SuperDAO;
+import lk.ijse.hibernate.dto.CustomerOrderDTO;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

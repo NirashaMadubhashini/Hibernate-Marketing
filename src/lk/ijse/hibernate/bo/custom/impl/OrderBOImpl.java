@@ -35,7 +35,7 @@ public class OrderBOImpl implements OrderBO {
             }
 
             connection.setAutoCommit(false);
-            Order order = new Order(dto.getOrderId(), dto.getItemCode(), dto.getCustomerId(), dto.getCost(), dto.getDate(), dto.getTime());
+//            Order order = new Order(dto.getOrderId(), dto.getItemCode(), dto.getCustomerId(), dto.getCost(), dto.getDate(), dto.getTime());
 //            boolean orderAdded = orderDAO.add(order);
 //            if (!orderAdded) {
 //                connection.rollback();

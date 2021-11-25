@@ -1,11 +1,13 @@
 package lk.ijse.hibernate.entity;
 
+
 import javafx.scene.control.Button;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
-@Entity
+@Entity(name = "customer")
 public class Customer {
     @Id
     private String customerId;
@@ -15,7 +17,9 @@ public class Customer {
     private String city;
     private String postalCode;
     private String province;
+    @Transient
     private Button update;
+    @Transient
     private Button delete;
 
     public Customer() {

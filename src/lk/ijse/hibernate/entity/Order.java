@@ -1,21 +1,30 @@
 package lk.ijse.hibernate.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
-@Entity
+@Entity(name = "order")
 public class Order {
+    @Id
     private String orderId;
-    private String itemCode;
-    private String customerId;
+
+
+    @ManyToOne
+    private Item item;
+
+    @OneToOne
+    private Customer customer;
+
     private double cost;
     private String date;
     private String time;
 
-
-    public Order(String orderId, String itemCode, String customerId, double cost, String date, String time) {
+    public Order(String orderId, Item item, Customer customer, double cost, String date, String time) {
         this.orderId = orderId;
-        this.itemCode = itemCode;
-        this.setCustomerId(customerId);
+        this.item = item;
+        this.customer = customer;
         this.cost = cost;
         this.date = date;
         this.time = time;
@@ -24,14 +33,13 @@ public class Order {
     public Order() {
     }
 
-    public Order(String orderId, String itemCode, double cost, String date, String time) {
-        this.setOrderId(orderId);
-        this.setItemCode(itemCode);
-        this.setCost(cost);
-        this.setDate(date);
-        this.setTime(time);
+    public Order(String orderId, Item item, double cost, String date, String time) {
+        this.orderId = orderId;
+        this.item = item;
+        this.cost = cost;
+        this.date = date;
+        this.time = time;
     }
-
 
     public String getOrderId() {
         return orderId;
@@ -41,12 +49,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public String getItemCode() {
-        return itemCode;
+    public Item getItem() {
+        return item;
     }
 
-    public void setItemCode(String itemCode) {
-        this.itemCode = itemCode;
+    public void setItem(Item item) {
+        this.item = item;
     }
 
     public double getCost() {
@@ -73,20 +81,18 @@ public class Order {
         this.time = time;
     }
 
-    public String getCustomerId() {
-        return customerId;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 
     @Override
     public String toString() {
         return "Order{" +
                 "orderId='" + orderId + '\'' +
-                ", itemCode='" + itemCode + '\'' +
-                ", customerId='" + customerId + '\'' +
                 ", cost=" + cost +
                 ", date='" + date + '\'' +
                 ", time='" + time + '\'' +

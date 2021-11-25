@@ -1,6 +1,6 @@
 package lk.ijse.hibernate.dao;
 
-import db.DbConnection;
+import lk.ijse.hibernate.db.DbConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

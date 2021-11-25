@@ -2,8 +2,6 @@ package lk.ijse.hibernate.controller.Item;
 
 
 import bo.BoFactory;
-import bo.custom.ItemBO;
-import dto.ItemDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,7 +10,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import view.tm.ItemTm;
+import lk.ijse.hibernate.bo.custom.ItemBO;
+import lk.ijse.hibernate.dto.ItemDTO;
+import lk.ijse.hibernate.view.tm.ItemTm;
 
 import java.io.IOException;
 import java.sql.SQLException;

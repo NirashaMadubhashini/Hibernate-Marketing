@@ -1,10 +1,9 @@
 package lk.ijse.hibernate.dao.custom;
 
-import dao.CrudDAO;
-import dto.CustomerOrderDTO;
-import entity.CustomerOrder;
-import entity.OrderDetail;
+import lk.ijse.hibernate.dao.CrudDAO;
+import lk.ijse.hibernate.dto.CustomerOrderDTO;
 import lk.ijse.hibernate.entity.CustomerOrder;
+import lk.ijse.hibernate.entity.OrderDetail;
 
 import java.sql.SQLException;
 import java.util.ArrayList;

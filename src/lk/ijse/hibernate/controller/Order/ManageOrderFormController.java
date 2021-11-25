@@ -1,8 +1,6 @@
 package lk.ijse.hibernate.controller.Order;
 
 import bo.BoFactory;
-import bo.custom.OrderBO;
-import dto.CustomerOrderDTO;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,7 +9,9 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import view.tm.CustomerOrderDetailTm;
+import lk.ijse.hibernate.bo.custom.OrderBO;
+import lk.ijse.hibernate.dto.CustomerOrderDTO;
+import lk.ijse.hibernate.view.tm.CustomerOrderDetailTm;
 
 import java.io.IOException;
 import java.sql.SQLException;

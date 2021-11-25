@@ -1,8 +1,8 @@
 package lk.ijse.hibernate.dao.custom.impl;
 
-import dao.CrudUtil;
-import dao.custom.ItemDAO;
-import entity.Item;
+import lk.ijse.hibernate.dao.CrudUtil;
+import lk.ijse.hibernate.dao.custom.ItemDAO;
+import lk.ijse.hibernate.entity.Item;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -28,7 +28,7 @@ public class ItemDAOImpl implements ItemDAO {
     }
 
     @Override
-    public boolean update(entity.Item dto) throws SQLException, ClassNotFoundException {
+    public boolean update(Item dto) throws SQLException, ClassNotFoundException {
         return CrudUtil.executeUpdate("UPDATE Item SET description=?,packSize=?,qtyOnHand=?,unitPrice=? WHERE itemCode=?",
                 dto.getDescription(), dto.getPackSize(), dto.getQtyOnHand(), dto.getUnitPrice(), dto.getItemCode());
     }

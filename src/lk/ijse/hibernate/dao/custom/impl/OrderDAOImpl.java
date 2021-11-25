@@ -1,8 +1,8 @@
 package lk.ijse.hibernate.dao.custom.impl;
 
-import dao.CrudUtil;
-import dao.custom.OrderDAO;
-import entity.Order;
+import lk.ijse.hibernate.dao.CrudUtil;
+import lk.ijse.hibernate.dao.custom.OrderDAO;
+import lk.ijse.hibernate.entity.Order;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -44,7 +44,7 @@ public class OrderDAOImpl implements OrderDAO {
     @Override
     public boolean add(Order dto) throws SQLException, ClassNotFoundException {
         return CrudUtil.executeUpdate("INSERT INTO `Order` (orderId,itemCode,customerId,cost,orderDate,orderTime) VALUES (?,?,?,?,?,?)",
-                dto.getOrderId(), dto.getItemCode(), dto.getCustomerId(), dto.getCost(), dto.getDate(), dto.getTime());
+                dto.getOrderId(), dto.getItem(), dto.getCustomer(), dto.getCost(), dto.getDate(), dto.getTime());
     }
 
     @Override
@@ -59,10 +59,10 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public Order search(String orderId) throws SQLException, ClassNotFoundException {
-        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `Order` WHERE orderId=?", orderId);
-        rst.next();
-        return new Order(rst.getString("orderId"), rst.getString("itemCode"),
-                rst.getString("customerId"), rst.getDouble("cost"), rst.getString("orderDate"), rst.getString("orderTime"));
+//        ResultSet rst = CrudUtil.executeQuery("SELECT * FROM `Order` WHERE orderId=?", orderId);
+//        rst.next();
+//        return new Order(rst.getString("orderId"), rst.getString("itemCode"), rst.getDouble("cost"), rst.getString("orderDate"), rst.getString("orderTime"));
+        return null;
     }
 
     @Override

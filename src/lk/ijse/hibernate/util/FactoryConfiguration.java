@@ -12,11 +12,11 @@ public class FactoryConfiguration {
 
     private FactoryConfiguration() {
         Configuration configuration = new Configuration().configure().
-                addAnnotatedClass(Customer.class).
-                addAnnotatedClass(CustomerOrder.class).
-                addAnnotatedClass(Item.class).
-                addAnnotatedClass(Order.class).
-                addAnnotatedClass(OrderDetail.class);
+                addAnnotatedClass(Customer.class);
+//                addAnnotatedClass(CustomerOrder.class).
+//                addAnnotatedClass(Item.class).
+//                addAnnotatedClass(Order.class).
+//                addAnnotatedClass(OrderDetail.class);
         sessionFactory = configuration.buildSessionFactory();
 
     }

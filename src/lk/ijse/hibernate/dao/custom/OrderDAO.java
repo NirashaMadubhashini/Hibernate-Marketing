@@ -1,7 +1,7 @@
 package lk.ijse.hibernate.dao.custom;
 
-import dao.CrudDAO;
-import entity.Order;
+import lk.ijse.hibernate.dao.CrudDAO;
+import lk.ijse.hibernate.entity.Order;
 
 import java.sql.SQLException;
 

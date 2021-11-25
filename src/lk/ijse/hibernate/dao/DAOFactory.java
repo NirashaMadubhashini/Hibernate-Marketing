@@ -1,6 +1,6 @@
 package lk.ijse.hibernate.dao;
 
-import dao.custom.impl.*;
+import lk.ijse.hibernate.dao.custom.impl.*;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
