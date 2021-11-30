@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import java.util.List;
 
 @Entity(name = "item")
 public class Item {
@@ -19,19 +20,22 @@ public class Item {
     @Transient
     private Button delete;
 
+//    @OneToMany(mappedBy = "item",fetch = FetchType.EAGER)
+//    private List<Order> orderList = new ArrayList<>();
 
     public Item() {
     }
 
-    public Item(String itemCode, String description, String packSize, int qtyOnHand, double unitPrice,
-                Button update, Button delete) {
-        this.setItemCode(itemCode);
-        this.setDescription(description);
-        this.setPackSize(packSize);
-        this.setQtyOnHand(qtyOnHand);
-        this.setUnitPrice(unitPrice);
-        this.setUpdate(update);
-        this.setDelete(delete);
+    public Item(String itemCode, String description, String packSize, int qtyOnHand, double unitPrice, Button update,
+                Button delete, List<Order> orderList) {
+        this.itemCode = itemCode;
+        this.description = description;
+        this.packSize = packSize;
+        this.qtyOnHand = qtyOnHand;
+        this.unitPrice = unitPrice;
+        this.update = update;
+        this.delete = delete;
+//        this.orderList = orderList;
     }
 
     public Item(String itemCode, String description, String packSize, int qtyOnHand, double unitPrice) {
@@ -41,6 +45,14 @@ public class Item {
         this.setQtyOnHand(qtyOnHand);
         this.setUnitPrice(unitPrice);
     }
+//
+//    public List<Order> getOrderList() {
+//        return orderList;
+//    }
+//
+//    public void setOrderList(List<Order> orderList) {
+//        this.orderList = orderList;
+//    }
 
     public String getItemCode() {
         return itemCode;

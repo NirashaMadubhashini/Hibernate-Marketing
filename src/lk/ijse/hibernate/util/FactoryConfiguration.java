@@ -15,7 +15,7 @@ public class FactoryConfiguration {
                 addAnnotatedClass(Customer.class).
 //                addAnnotatedClass(CustomerOrder.class).
                 addAnnotatedClass(Item.class);
-//                addAnnotatedClass(Order.class).
+//                addAnnotatedClass(Order.class);
 //                addAnnotatedClass(OrderDetail.class);
         sessionFactory = configuration.buildSessionFactory();
 

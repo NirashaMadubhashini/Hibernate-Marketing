@@ -43,7 +43,7 @@ public class OrderDAOImpl {
 
     public boolean add(Order dto) throws SQLException, ClassNotFoundException {
         return CrudUtil.executeUpdate("INSERT INTO `Order` (orderId,itemCode,customerId,cost,orderDate,orderTime) VALUES (?,?,?,?,?,?)",
-                dto.getOrderId(), dto.getItem(), dto.getCustomer(), dto.getCost(), dto.getDate(), dto.getTime());
+                dto.getOrderId(), dto.getCustomer(), dto.getCost(), dto.getDate());
     }
 
 

@@ -16,7 +16,8 @@ import java.io.IOException;
 public class AppInitializer extends Application {
 
     public static void main(String[] args) {
-        Customer customer = new Customer();
+
+//        Customer customer = new Customer();
 //        customer.setCustomerId("C001");
 //        customer.setTitle("Miss");
 //        customer.setName("Nirasha");
@@ -24,22 +25,34 @@ public class AppInitializer extends Application {
 //        customer.setCity("Gal");
 //        customer.setPostalCode("110");
 //        customer.setProvince("South");
-
-
         Item item = new Item();
-        item.setItemCode("I002");
-        item.setDescription("Rice");
-        item.setPackSize("100g");
+        item.setItemCode("I003");
+        item.setDescription("Coconut");
+        item.setPackSize("1");
         item.setQtyOnHand(20);
-        item.setUnitPrice(120);
+        item.setUnitPrice(100);
+
+        Customer customer = new Customer();
+        customer.setCustomerId("C002");
+        customer.setTitle("Mrs");
+        customer.setName("Geeth");
+        customer.setAddress("Galle");
+        customer.setCity("Kalegana");
+        customer.setPostalCode("110");
+        customer.setProvince("South");
+
+//        Order order1 = new Order();
+//        order1.setOrderId("O001");
+//        order1.setCost(200);
+
 
 
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
 
-//        session.save(customer);
-        session.save(item);
+        session.update(customer);
+        session.update(item);
 
 
         transaction.commit();

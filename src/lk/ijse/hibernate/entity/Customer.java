@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Transient;
+import java.util.List;
 
 @Entity(name = "customer")
 public class Customer {
@@ -22,20 +23,26 @@ public class Customer {
     @Transient
     private Button delete;
 
+
+//    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
+//    private List<Order> orderList = new ArrayList<>();
+
+
     public Customer() {
     }
 
     public Customer(String customerId, String title, String name, String address, String city, String postalCode,
-                    String province, Button update, Button delete) {
-        this.setCustomerId(customerId);
-        this.setTitle(title);
-        this.setName(name);
-        this.setAddress(address);
-        this.setCity(city);
-        this.setPostalCode(postalCode);
-        this.setProvince(province);
-        this.setUpdate(update);
-        this.setDelete(delete);
+                    String province, Button update, Button delete, List<Order> orderList) {
+        this.customerId = customerId;
+        this.title = title;
+        this.name = name;
+        this.address = address;
+        this.city = city;
+        this.postalCode = postalCode;
+        this.province = province;
+        this.update = update;
+        this.delete = delete;
+//        this.orderList = orderList;
     }
 
     public Customer(String customerId, String title, String name, String address, String city, String postalCode, String province) {
@@ -47,6 +54,14 @@ public class Customer {
         this.setPostalCode(postalCode);
         this.setProvince(province);
     }
+
+//    public List<Order> getOrderList() {
+//        return orderList;
+//    }
+//
+//    public void setOrderList(List<Order> orderList) {
+//        this.orderList = orderList;
+//    }
 
     public String getCustomerId() {
         return customerId;
